@@ -1,0 +1,2 @@
+Overwriting the file with new content
+Hello world, appending the data123

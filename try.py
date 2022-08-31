@@ -1,0 +1,2 @@
+a = "Roger"
+type(a)
