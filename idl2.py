@@ -1,3 +1,119 @@
+def add_num(my_func,v2):
+    return my_func+v2+1
+
+def arg_func(ret_fun):
+    mynum = 345
+    mynum2 = 4
+    return ret_fun(mynum, mynum2)
+
+print(add_num(1,1))
+
+#Here arg_func taking function as parameter and returning the calling funciton with value that will used in passing func
+#in this case add_num passed as argument and within regurn call is made to this function with value MYNUM variable
+print(arg_func(add_num))
+
+#lambda
+def lam(x):
+    import random
+    r= random.randint(0,78)
+    print("random num is: ",r)
+    print("input num is: ",x)
+    return lambda l: x+r+l
+
+
+#Class Decorator
+
+class decorator_class(object):
+    def __init__(self, push_function):
+        self.push_function = push_function
+
+    def __call__(self, *args, **kwargs):
+        print("Calling wrapper function which takes param for function: {} ".format(self.push_function.__name__))
+        print(f"Argument of {args} and values are {kwargs}")
+        return self.push_function(*args, **kwargs)
+
+@decorator_class
+def say_hello():
+    print("Hello Class {}".format(__name__))
+
+say_hello()
+
+@decorator_class
+def hello_class_func(a,b):
+    print("Hello {} , this is {} decorator ".format(a,b))
+
+hello_class_func("Tom","Class")
+
+
+
+'''
+#to handle different numbers of function parameter scenrio python use *args and **kwargs
+#that basically passed to wrapper function and same is used in calling function 
+
+
+def my_decorator_func(anyfunc):
+    print("-- this is decorator function applying on calling function - {0}".format(__name__))
+    def wrapper_func(*args, **kwargs):
+        print("\tthis is Wrapper Function - {} ".format(wrapper_func.__name__))
+        return anyfunc(*args, **kwargs)
+    return wrapper_func
+
+@my_decorator_func
+def hello():
+    print("\t\tHello World function is {} ".format(hello.__name__))
+
+hello()
+print("\n\n\n")
+
+##Step1 at this moment only my_decorator_fun will execute and keep waiting for wrapper_fun to execute with will execute with steps 2
+@my_decorator_func
+def say_hello(n,age):
+    print("\t\tHello Mr {} your age is {} func name {}".format(n,age,say_hello.__name__))
+
+##Step 2 calling the wrapper function which inturn called say_hello    
+say_hello("John",30)
+
+print("\n\n\n")
+##This is traditional way to call a function
+##h = hello()
+##h
+##h1 = say_hello("Jhon",25)
+##h1
+   
+
+
+def ht_tag(tag):
+    def wrap_tag(msg):
+        print(f"<{tag}>{msg}</{tag}>")
+        print("<{0}>{1}</{0}>".format(tag,msg))
+    return wrap_tag
+
+h = ht_tag("H1")
+h("Hello World")
+
+h= = ht_tag("H2")
+h("Beautiful Day !")
+
+
+def cube(x):
+    return x*x*x
+
+def sqr(x):
+    return x*x
+
+def fun_tbl(myfunc, mlist):
+    l = []
+    for i in mlist:
+        l.append(myfunc(i))
+    return l
+
+c = fun_tbl(cube, [1,2,3,4])
+print(c)
+
+c1 = fun_tbl(sqr, [1,2,3,4])
+print(c1)
+
+
 
 #Decorator basic level 1
 def decorator_func(my_func):
@@ -64,8 +180,6 @@ def h(a):
 #calling h function
 h
 
-
-'''
 #Passing function as agrument and using the Python first class functionality by using parameter as argument
 def per(p):
     ad = float(input("Enter the additional discount to apply"))
