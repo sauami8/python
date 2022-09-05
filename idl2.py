@@ -13,6 +13,7 @@ print(add_num(1,1))
 print(arg_func(add_num))
 
 #lambda
+
 def lam(x):
     import random
     r= random.randint(0,78)
@@ -20,6 +21,13 @@ def lam(x):
     print("input num is: ",x)
     return lambda l: x+r+l
 
+#lam function is loaded to m and wating for lambda to execute which is called with m(20) by passing 20 as value for lambda l
+m= lam(2)
+random num is:  24
+input num is:  2
+
+m(20)
+>>>46
 
 #Class Decorator
 
