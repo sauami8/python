@@ -68,7 +68,8 @@ for x in df.loc[df["Sales"]>10000]["Country"]:
     print(x)
 
     
-United States
+United 
+
 United States
 United States
 United States
@@ -164,6 +165,7 @@ def s(a):
         return a*2
     v = s1(a)
     return v
+
 
 
 z = s(2)
