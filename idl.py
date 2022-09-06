@@ -68,7 +68,7 @@ for x in df.loc[df["Sales"]>10000]["Country"]:
     print(x)
 
     
-United 
+ 
 
 United States
 United States
