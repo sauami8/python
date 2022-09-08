@@ -1,3 +1,29 @@
+
+#list Compheransive
+my_list = [1,2,3,4,5,6,7,8,9,0]
+sqr_list = [ new_list**2 for new_list in my_list]
+sqr_list
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+sqr_list = [ new_list*new_list for new_list in my_list]
+>>>sqr_list
+>>>[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+#Generator
+def sqr_gen(num):
+    for i in num:
+        yield (i*i)
+        
+my_gen = sqr_gen(my_list)
+
+print(next(my_gen))
+#you can get genrator value from for loop
+for x in my_gen:
+    print(x)
+
+
+
+
 def add_num(my_func,v2):
     return my_func+v2+1
 
