@@ -21,7 +21,30 @@ print(next(my_gen))
 for x in my_gen:
     print(x)
 
+#Generator with list compherensive
 
+new_gen = [x*x for x in my_list]
+print(new_gen)
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+#generator from list comprehnsive 
+new_gen = (x*x for x in my_list)
+new_gen
+<generator object <genexpr> at 0x107676810>
+for xx in new_gen:
+    print(xx)
+
+ >>>result is    
+1
+4
+9
+16
+25
+36
+49
+64
+81
+0
 
 
 def add_num(my_func,v2):
