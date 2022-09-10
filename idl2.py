@@ -1,4 +1,41 @@
 
+#Iterator - objects which are iterable can be used as iterator such as list, dictionary, tuppel etc
+#method to create iterator
+#Note: Iterator only go forward, not backword or resetting or making copy
+itr_my_list = my_list.__iter__()
+
+#or use the method in better way 
+itr_my_list1 = iter(my_list)
+
+itr_my_list
+<list_iterator object at 0x107646620>
+itr_my_list1
+<list_iterator object at 0x107646b00>
+#calling the iterator element from the list
+next(itr_my_list1)
+0
+itr_my_list1.__next__()
+9
+itr_my_list1.__next__()
+8
+next(itr_my_list1)
+7
+
+#printing Iteration of list item
+#Pseudo code- Iterable object like list (make list to Iterator by using iter method and then call the next element by using next method)
+
+
+my_list = [0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 12, 13]
+itr_my_list = my_list.__iter__()
+
+while True:
+    try:
+        x=next(itr_my_list)
+        print(x)
+    except StopIteration:
+        break
+
+
 #list Compheransive
 my_list = [1,2,3,4,5,6,7,8,9,0]
 sqr_list = [ new_list**2 for new_list in my_list]
@@ -9,7 +46,7 @@ sqr_list = [ new_list*new_list for new_list in my_list]
 >>>sqr_list
 >>>[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
 
-#Generator
+#Generator note single integer value is not iterable because its single digit
 def sqr_gen(num):
     for i in num:
         yield (i*i)
