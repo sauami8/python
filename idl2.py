@@ -141,6 +141,31 @@ hello_class_func("Tom","Class")
 
 
 '''
+
+#random test 0 zero in python 0 in python is false
+def test():
+    a = [0,1, 4, 9, 16, 0]
+    for x in a:
+        if x==True:
+            print("Value of x ",x)
+        else:
+            print("Value of X*x: ",x*x)
+
+            
+test()
+Value of X*x:  0
+Value of x  1
+Value of X*x:  16
+Value of X*x:  81
+Value of X*x:  256
+Value of X*x:  0
+
+#list Comperhensive method
+# test = [x*x for x in a if x]
+test
+[1, 16, 81, 256]
+
+
 #to handle different numbers of function parameter scenrio python use *args and **kwargs
 #that basically passed to wrapper function and same is used in calling function 
 

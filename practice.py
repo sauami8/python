@@ -1,6 +1,4 @@
-
-
-class Emp:
+class emp:
     increment = 1.05
     cnt = 0
 
@@ -8,60 +6,28 @@ class Emp:
         self.fname = fname
         self.lname = lname
         self.pay = pay
-        
-        Emp.cnt +=1 
+        self.email = fname+lname+'@instance.com'
+        emp.cnt+=1
 
-    def pay_raise(self):
-        self.pay = int(self.pay * self.increment)
-        #int(self.pay * Emp.increment) when set this instance setting instance increment will not take effect as its always look for class level variable value
-        #int(self.pay * self.increment) this will consider the increment value set at instance level
-        """
-        e1 = Emp("Rose", "Water", 10)
-        e2 = Emp("Jenny", "Shaw", 100)
-        e1.increment = 2.0
-        e2.increment = 3.0
-        Emp.increment = 5.0
+    #this method works same as creating new instance for class but require some sort of additional task to get class arguments
 
-        for int(self.pay * self.increment) 
-        Emp.increment  5.0
-        E1.increment  2.0
-        E2.increment  3.0
-        E1 Pay  20
-        E2 Pay  300
-        Emp PayIncrease  5.0
-        sauami@Sauami tmp % 
+    @classmethod
+    def add_new_emp(cls, mystr):
+        fname, lname, pay = mystr.split("-")
+        return cls(fname, lname,pay) 
 
-        for int(self.pay * Emp.increment)#no matter what you set at instance level it will calculate @Class level increment which is 5.0
-        Emp.increment  5.0
-        E1.increment  2.0
-        E2.increment  3.0
-        E1 Pay  50
-        E2 Pay  500
-        Emp PayIncrease  5.0
-        """
+#Static method don't take neither class or instance parameter automatically but it has logical linking/relation with class
+    #@staticmethod 
+    def from_age(age):
+        d = 365
+        return float((age*d)+emp.increment)
 
-    def full_name(self):
-        return (self.fname+' '+self.lname)
+age2day = emp.from_age(10)
+print("Total number of days in age is ", age2day)
 
+cdata = 'saurabh-raj-888'
 
-e1 = Emp("Rose", "Water", 10)
-e2 = Emp("Jenny", "Shaw", 100)
+ne = emp.add_new_emp(cdata)
 
-print("B4 Emp.increment ", Emp.increment)
-print("E1.increment ", e1.increment)
-print("E2.increment ", e2.increment)
-print("\n\n\n\n")
-e1.increment = 2.0
-e2.increment = 3.0
-Emp.increment = 5.0
-
-print("Emp.increment ", Emp.increment)
-print("E1.increment ", e1.increment)
-print("E2.increment ", e2.increment)
-e2.pay_raise()
-e1.pay_raise()
-
-
-print("E1 Pay ", e1.pay)
-print("E2 Pay ", e2.pay)
-print("Emp PayIncrease ", Emp.increment)
+print(type(ne))
+print(f"New emp {ne.email} added and pay is {ne.pay}")

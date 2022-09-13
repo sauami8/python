@@ -112,3 +112,28 @@ print("counter", Employee.cnt)
 # sauami@Sauami tmp % 
 #counter 4 (Because cnt will increment everytime when new instance is craeted)
 #--------
+
+#Class method 
+class emp:
+    increment = 1.05
+    cnt = 0
+
+    def __init__(self, fname, lname, pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        self.email = fname+lname+'@instance.com'
+        emp.cnt+=1
+
+    #this method works same as creating new instance for class but require some sort of additional task to get class arguments
+    @classmethod
+    def add_new_emp(cls, mystr):
+        fname, lname, pay = mystr.split("-")
+        return cls(fname, lname,pay) 
+
+cdata = 'saurabh-raj-888'
+
+ne = emp.add_new_emp(cdata)
+
+print(type(ne))
+print(f"New emp {ne.email} added and pay is {ne.pay}")
