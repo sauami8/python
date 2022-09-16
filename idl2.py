@@ -46,6 +46,55 @@ sqr_list = [ new_list*new_list for new_list in my_list]
 >>>sqr_list
 >>>[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
 
+
+condition =True
+x = 1 if condition else 0
+x
+1
+condition =False
+x = 1 if condition else 0
+x
+0
+
+#comma seperator number in 
+a=10_000
+b=200_000
+t = a+b
+print(f"total is {t:,}")
+total is 210,000
+>>>total is 210,000
+
+#List index and value from list start is optional default start with 0 enumerate gin-na
+emp = ["jack","rose","Defney","Tom","Frank","Peter"]
+
+for index, name in enumerate(emp , start=2):
+    print(index, name)
+
+    
+2 jack
+3 rose
+4 Defney
+5 Tom
+6 Frank
+7 Peter
+
+#unpackig multiple list with zip
+
+names = ["Spider man","Saktiman", 'Superman']
+heros = ["Peter Parket", "Gangadhar", "Clark"]
+company = ["Marvel","DD 1","DC Comic"]
+for name, hero, comp in zip(names, heros, company):
+    print(f"{name} - Played the role of \"{hero}\" and he is form \"{comp}\"")
+
+    
+Spider man - Played the role of "Peter Parket" and he is form "Marvel"
+Saktiman - Played the role of "Gangadhar" and he is form "DD 1"
+Superman - Played the role of "Clark" and he is form "DC Comic"
+
+
+#Python Unit test assert are used 
+
+
 #Generator note single integer value is not iterable because its single digit
 def sqr_gen(num):
     for i in num:
@@ -232,6 +281,21 @@ print(c)
 c1 = fun_tbl(sqr, [1,2,3,4])
 print(c1)
 
+def a(fun):
+    print("Hello Main function")
+    n="this is it"
+    def b(a,b):
+        c = a+b
+        n1=n+" Thanks"
+        return fun(c,n1)
+    return b
+
+@a
+def mydec(a,b):
+    print("hello name is  ",a,b)
+
+mydec(1,2)
+
 
 
 #Decorator basic level 1
@@ -384,3 +448,46 @@ out_func("Morning")
 
 
 '''
+
+# dictionary in list
+d = [
+ {
+  "name":"Pen",
+  "unit_price":5
+ },
+ {
+  "name":"Eraser",
+  "unit_price":3
+ },
+ {
+  "name":"Pencil",
+  "unit_price":10
+ },
+ {
+  "name":"White paper",
+  "unit_price":15
+ }
+]
+
+for i in d:
+    print(f"Accessing dict from list --> {i}")
+    for x in i:
+        print(f"Accessing dictionary key and values Key--> {x}, and Value --> {i[x]}")
+
+        
+Accessing dict from list --> {'name': 'Pen', 'unit_price': 5}
+Accessing dictionary key and values Key--> name, and Value --> Pen
+Accessing dictionary key and values Key--> unit_price, and Value --> 5
+Accessing dict from list --> {'name': 'Eraser', 'unit_price': 3}
+Accessing dictionary key and values Key--> name, and Value --> Eraser
+Accessing dictionary key and values Key--> unit_price, and Value --> 3
+Accessing dict from list --> {'name': 'Pencil', 'unit_price': 10}
+Accessing dictionary key and values Key--> name, and Value --> Pencil
+Accessing dictionary key and values Key--> unit_price, and Value --> 10
+Accessing dict from list --> {'name': 'White paper', 'unit_price': 15}
+Accessing dictionary key and values Key--> name, and Value --> White paper
+Accessing dictionary key and values Key--> unit_price, and Value --> 15
+
+
+
+#__name__ assign value __main__ to 

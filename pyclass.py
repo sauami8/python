@@ -1,5 +1,30 @@
 #https://github.com/sauami8/python.git
 
+"""
+class Employee:
+    increment = 1.05
+    cnt = 0    
+    def __init__(self, fname, lname,pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        self.email = fname + '.' + lname + '@company.com'
+        Employee.cnt +=1
+
+    def full_name(self):
+        return "{} {}".format(self.fname,self.lname)
+
+    def raise_amt(self):
+        self.pay = int(self.pay * self.increment)
+
+e1 = Employee("sr", "Raj",100)
+
+print(e1.email, e1.pay)
+e1.raise_amt()
+
+print(e1.email, e1.pay)
+
+"""
 # empty class
 from ast import increment_lineno
 
@@ -41,6 +66,7 @@ class Employee:
 
 e1 = Employee('saurabh', 'raj',100)
 e2 = Employee("Hari","om",200)
+ss = Employee("Hari","om",200)
 
 print(e1.fname, e1.email)
 print(e2.lname,e2.fname, e2.email)
@@ -137,3 +163,5 @@ ne = emp.add_new_emp(cdata)
 
 print(type(ne))
 print(f"New emp {ne.email} added and pay is {ne.pay}")
+
+sss = "Hello World"

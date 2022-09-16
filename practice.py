@@ -1,3 +1,29 @@
+class Employee:
+    increment = 1.05
+    cnt = 0    
+    def __init__(self, fname, lname,pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        self.email = fname + '.' + lname + '@company.com'
+        Employee.cnt +=1
+
+    def full_name(self):
+        return "{} {}".format(self.fname,self.lname)
+
+    def raise_amt(self):
+        self.pay = int(self.pay * self.increment)
+
+e1 = Employee("sr", "Raj",100)
+
+print(e1.email, e1.pay)
+e1.raise_amt()
+
+print(e1.email, e1.pay)
+
+
+
+"""
 class emp:
     increment = 1.05
     cnt = 0
@@ -31,3 +57,4 @@ ne = emp.add_new_emp(cdata)
 
 print(type(ne))
 print(f"New emp {ne.email} added and pay is {ne.pay}")
+"""
