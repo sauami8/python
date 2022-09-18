@@ -48,6 +48,6 @@ def say_hello():
 
 
 def small_hello():
-    print("Small Hello  123".__name__)
+    print("Small Hello  123 {}".format(__name__))
 
 say_hello()

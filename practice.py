@@ -1,13 +1,28 @@
-from typing import List
+def deco2(func):
+    print("Inner Decorator Func name -> {}".format(func.__name__))
+    def two_wrap(a,b):
+        print("\tinner Wrapper func -> {}".format(func.__name__))
+        a=a
+        b= b*10
+        return func(a,b)
+    return two_wrap
 
+def main_deco(func):
+    print("\nThis is Outer Decorator function name > {} ".format(__name__))
 
-def x(lv: List[float]):
-    for i in lv:
-        print(i)
+    def deco_wrapper (a,b):
+        print("\tOuter Wrapper Decorator > {}".format(func.__name__))
+        a= a
+        b=b*2
+        return func(a,b)
+    return deco_wrapper
 
-
-x([1,2,3])
-
+@main_deco
+@deco2
+def add_num(a,b):
+    print(f"Final function Adding Number value function name {a},{b} ")
+#Till here Decorator\'s loaded into memory 
+add_num(2,4)
 
 
 """
