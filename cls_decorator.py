@@ -34,9 +34,20 @@ def say_hello():
 
 @decorator_class
 def hello_class_func(a,b):
-    print("Hello -->{}<-- , this is -->{} <--decorator ".format(a,b))
+    """annotation"""
+    print("Hello -->{}<-- , this is -->{} <--decorator {}".format(a,b,__name__))
 
 hello_class_func("Tom","Class")
 # print("\n\n\n")
-# say_hello()
+#say_hello()
 
+def say_hello():
+    print("\n\nsay Hello ".format(__name__))
+    #return func(x)
+    small_hello()
+
+
+def small_hello():
+    print("Small Hello  123".__name__)
+
+say_hello()

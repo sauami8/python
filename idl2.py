@@ -46,6 +46,59 @@ sqr_list = [ new_list*new_list for new_list in my_list]
 >>>sqr_list
 >>>[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
 
+#generator with list comp
+x2 = (x+2 for x in [1,2,3,4,5])
+                    
+x2
+                    
+<generator object <genexpr> at 0x105308f20>
+
+# for more clarity
+#this will create list witih iteration
+l = [x**2 for x in [1,2,3]]
+                    
+type(l)
+                    
+<class 'list'>
+
+l = [x for x in range(0,10)]
+                    
+l
+                    
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+type(l)
+                    
+<class 'list'>
+
+l = [x for x in range(0,10)]                   
+l             
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+type(l)                    
+<class 'list'>
+
+#but when used within squar brackets in this case it become ananymus block
+
+l = (x for x in range(0,10))
+                    
+l
+                    
+<generator object <genexpr> at 0x105308f90>
+next(l)
+                    
+0
+for x in l:
+    print(x)
+
+                    
+1
+2
+3
+4
+5
+6
+7
+8
+9
 
 condition =True
 x = 1 if condition else 0

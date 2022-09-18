@@ -1,3 +1,16 @@
+from typing import List
+
+
+def x(lv: List[float]):
+    for i in lv:
+        print(i)
+
+
+x([1,2,3])
+
+
+
+"""
 class Employee:
     increment = 1.05
     cnt = 0    
@@ -21,9 +34,6 @@ e1.raise_amt()
 
 print(e1.email, e1.pay)
 
-
-
-"""
 class emp:
     increment = 1.05
     cnt = 0
