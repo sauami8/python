@@ -1,3 +1,23 @@
+# define variables
+reversal = 0
+# interactive input
+pal = int(input('Enter a Number '))
+tempe = pal
+# computation/compare
+while(pal>0):
+    dig = pal % 10
+    reversal = reversal*10+dig
+    pal = pal//10
+
+
+# report result
+if(tempe==reversal):
+    print("The number is a palindrome!")
+else:
+    print("The number isn't a palindrome!")
+
+
+"""
 def deco2(func):
     print("Inner Decorator Func name -> {}".format(func.__name__))
     def two_wrap(a,b):
@@ -25,7 +45,17 @@ def add_num(a,b):
 add_num(2,4)
 
 
-"""
+def a ():
+    x="hello"
+    c="no match"
+    assert(x=="helo"),c
+    return c
+    
+
+print(a())
+
+
+
 class Employee:
     increment = 1.05
     cnt = 0    

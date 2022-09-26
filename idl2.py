@@ -1,3 +1,41 @@
+#Print statment with END allow iterator item to be combine with as needed default is \n
+
+l1 = [1 2 3 5]
+for l in l1:
+    print(l, end=",")
+
+>>>1,2,3,5,
+
+#Assert is like if condition
+
+try:
+    x = "OK"
+    assert x == "O", "Value is not OK"
+except AssertionError as assert_error_msg:
+    print(assert_error_msg)
+
+>>>Value is not OK
+
+
+try:
+    x = "OK"
+    assert x == "OK", "Value is not OK"
+    print("Value is checked and found Ok")
+except AssertionError as assert_error_msg:
+    print(assert_error_msg)
+
+>>>Value is checked and found Ok
+
+
+x = "hello"
+assert x == "goodbye", "x should be 'hello'"
+Traceback (most recent call last):
+  File "<pyshell#74>", line 1, in <module>
+    assert x == "goodbye", "x should be 'hello'"
+AssertionError: x should be 'hello'
+
+assert x == "hello", "x should be 'hello'"
+>>no error here 
 
 #Iterator - objects which are iterable can be used as iterator such as list, dictionary, tuppel etc
 #method to create iterator
@@ -116,6 +154,30 @@ t = a+b
 print(f"total is {t:,}")
 total is 210,000
 >>>total is 210,000
+
+
+#Enum 
+import enum
+class ab(enum.Enum):
+    A = 1
+    B=2
+    C=3
+ab.A
+<ab.A: 1>
+print(ab.A, ab.B, ab.C)
+ab.A ab.B ab.C
+ab(1)
+<ab.A: 1>
+print(ab(1)
+      )
+ab.A
+print(ab(2))
+ab.B
+ab.A
+<ab.A: 1>
+dir(ab.A)
+['__class__', '__doc__', '__module__', 'name', 'value']
+
 
 #List index and value from list start is optional default start with 0 enumerate gin-na
 emp = ["jack","rose","Defney","Tom","Frank","Peter"]

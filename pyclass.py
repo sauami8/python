@@ -1,5 +1,34 @@
 #https://github.com/sauami8/python.git
 
+class emp:
+    def __init__(self, fname, lname,pay):
+        self.fname = fname
+        self.lname = lname
+        self.pay = pay
+        self.email = fname + '.'+lname + '@company.com'
+
+
+    def get_name(self):
+        return "Name of empl {}, {} {}".format(self.fname, self.lname, __name__)
+
+
+    def call_name(self, fun):
+        return fun
+
+    def get_name_new(self):
+        return "emp name {}, {} and email is {}".format(self.fname, self.lname, self.email)
+
+
+e = emp("Jhon", "dow", 100)
+
+
+
+print(e.get_name())
+
+print(e.call_name(e.get_name()), e.email)
+
+print(e.get_name_new())
+
 """
 class Employee:
     increment = 1.05
@@ -22,11 +51,18 @@ e1 = Employee("sr", "Raj",100)
 print(e1.email, e1.pay)
 e1.raise_amt()
 
+if e1.pay==105:
+    print("pay is 100 and Exit")
+    exit()
+else:
+    print("no data ", e1.pay)
+
 print(e1.email, e1.pay)
 
-"""
 # empty class
 from ast import increment_lineno
+
+
 
 
 class emp:
@@ -48,7 +84,7 @@ class Employee:
     #class variable can be access in fun with self self.increment or by referring Class.increment 5% increase
     #__init__ function call when instance is created and instance is passed in place of self without mentioning
 
-    def __init__(self, fname, lname, pay):
+    def __init__(self, fname, lname, pay = None):
         self.fname = fname
         self.lname = lname
         self.pay = pay
@@ -65,8 +101,15 @@ class Employee:
 #create instance of the class with the value in the order defined in class init
 
 e1 = Employee('saurabh', 'raj',100)
-e2 = Employee("Hari","om",200)
-ss = Employee("Hari","om",200)
+# e2 = Employee("Hari","om",200)
+# ss = Employee("Hari","om",200)
+# t = Employee("Jhon","Dow",100)
+
+# print("emp name is ",t.full_name(), t.pay)
+
+print(Employee.full_name(e1))
+print(e1.full_name)
+
 
 print(e1.fname, e1.email)
 print(e2.lname,e2.fname, e2.email)
@@ -165,3 +208,5 @@ print(type(ne))
 print(f"New emp {ne.email} added and pay is {ne.pay}")
 
 sss = "Hello World"
+
+"""
