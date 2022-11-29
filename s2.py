@@ -8,7 +8,7 @@ s1.hello()
 
 
 def hello():
-    print("Hello S2 from {} ".format(__name__))
+    print("Hello S2 from --> {} ".format(__name__))
 
 hello()
 

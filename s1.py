@@ -7,6 +7,7 @@ x = print ("This is from Main S1 File and __name__ is ", __name__)
 #s2.x = print ("This is from S2 and __name__ is ", __name__)
 
 def hello():
-    print("Hello S1 from {} ".format(__name__))
+    print("Hello S1 from check --> {} ".format(__name__))
 
-hello()
+if __name__ == '__main__':
+    hello()
