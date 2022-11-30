@@ -1,3 +1,253 @@
+#Print statment with END allow iterator item to be combine with as needed default is \n
+
+l1 = [1 2 3 5]
+for l in l1:
+    print(l, end=",")
+
+>>>1,2,3,5,
+
+#Assert is like if condition
+
+try:
+    x = "OK"
+    assert x == "O", "Value is not OK"
+except AssertionError as assert_error_msg:
+    print(assert_error_msg)
+
+>>>Value is not OK
+
+
+try:
+    x = "OK"
+    assert x == "OK", "Value is not OK"
+    print("Value is checked and found Ok")
+except AssertionError as assert_error_msg:
+    print(assert_error_msg)
+
+>>>Value is checked and found Ok
+
+
+x = "hello"
+assert x == "goodbye", "x should be 'hello'"
+Traceback (most recent call last):
+  File "<pyshell#74>", line 1, in <module>
+    assert x == "goodbye", "x should be 'hello'"
+AssertionError: x should be 'hello'
+
+assert x == "hello", "x should be 'hello'"
+>>no error here 
+
+#Iterator - objects which are iterable can be used as iterator such as list, dictionary, tuppel etc
+#method to create iterator
+#Note: Iterator only go forward, not backword or resetting or making copy
+itr_my_list = my_list.__iter__()
+
+#or use the method in better way 
+itr_my_list1 = iter(my_list)
+
+itr_my_list
+<list_iterator object at 0x107646620>
+itr_my_list1
+<list_iterator object at 0x107646b00>
+#calling the iterator element from the list
+next(itr_my_list1)
+0
+itr_my_list1.__next__()
+9
+itr_my_list1.__next__()
+8
+next(itr_my_list1)
+7
+
+#printing Iteration of list item
+#Pseudo code- Iterable object like list (make list to Iterator by using iter method and then call the next element by using next method)
+
+
+my_list = [0, 9, 8, 7, 6, 5, 4, 3, 2, 1, 11, 12, 13]
+itr_my_list = my_list.__iter__()
+
+while True:
+    try:
+        x=next(itr_my_list)
+        print(x)
+    except StopIteration:
+        break
+
+
+#list Compheransive
+my_list = [1,2,3,4,5,6,7,8,9,0]
+sqr_list = [ new_list**2 for new_list in my_list]
+sqr_list
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+sqr_list = [ new_list*new_list for new_list in my_list]
+>>>sqr_list
+>>>[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+#generator with list comp
+x2 = (x+2 for x in [1,2,3,4,5])
+                    
+x2
+                    
+<generator object <genexpr> at 0x105308f20>
+
+# for more clarity
+#this will create list witih iteration
+l = [x**2 for x in [1,2,3]]
+                    
+type(l)
+                    
+<class 'list'>
+
+l = [x for x in range(0,10)]
+                    
+l
+                    
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+type(l)
+                    
+<class 'list'>
+
+l = [x for x in range(0,10)]                   
+l             
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+type(l)                    
+<class 'list'>
+
+#but when used within squar brackets in this case it become ananymus block
+
+l = (x for x in range(0,10))
+                    
+l
+                    
+<generator object <genexpr> at 0x105308f90>
+next(l)
+                    
+0
+for x in l:
+    print(x)
+
+                    
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+condition =True
+x = 1 if condition else 0
+x
+1
+condition =False
+x = 1 if condition else 0
+x
+0
+
+#comma seperator number in 
+a=10_000
+b=200_000
+t = a+b
+print(f"total is {t:,}")
+total is 210,000
+>>>total is 210,000
+
+
+#Enum 
+import enum
+class ab(enum.Enum):
+    A = 1
+    B=2
+    C=3
+ab.A
+<ab.A: 1>
+print(ab.A, ab.B, ab.C)
+ab.A ab.B ab.C
+ab(1)
+<ab.A: 1>
+print(ab(1)
+      )
+ab.A
+print(ab(2))
+ab.B
+ab.A
+<ab.A: 1>
+dir(ab.A)
+['__class__', '__doc__', '__module__', 'name', 'value']
+
+
+#List index and value from list start is optional default start with 0 enumerate gin-na
+emp = ["jack","rose","Defney","Tom","Frank","Peter"]
+
+for index, name in enumerate(emp , start=2):
+    print(index, name)
+
+    
+2 jack
+3 rose
+4 Defney
+5 Tom
+6 Frank
+7 Peter
+
+#unpackig multiple list with zip
+
+names = ["Spider man","Saktiman", 'Superman']
+heros = ["Peter Parket", "Gangadhar", "Clark"]
+company = ["Marvel","DD 1","DC Comic"]
+for name, hero, comp in zip(names, heros, company):
+    print(f"{name} - Played the role of \"{hero}\" and he is form \"{comp}\"")
+
+    
+Spider man - Played the role of "Peter Parket" and he is form "Marvel"
+Saktiman - Played the role of "Gangadhar" and he is form "DD 1"
+Superman - Played the role of "Clark" and he is form "DC Comic"
+
+
+#Python Unit test assert are used 
+
+
+#Generator note single integer value is not iterable because its single digit
+def sqr_gen(num):
+    for i in num:
+        yield (i*i)
+        
+my_gen = sqr_gen(my_list)
+
+print(next(my_gen))
+#you can get genrator value from for loop
+for x in my_gen:
+    print(x)
+
+#Generator with list compherensive
+
+new_gen = [x*x for x in my_list]
+print(new_gen)
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 0]
+
+#generator from list comprehnsive 
+new_gen = (x*x for x in my_list)
+new_gen
+<generator object <genexpr> at 0x107676810>
+for xx in new_gen:
+    print(xx)
+
+ >>>result is    
+1
+4
+9
+16
+25
+36
+49
+64
+81
+0
+
+
 def add_num(my_func,v2):
     return my_func+v2+1
 
@@ -55,6 +305,31 @@ hello_class_func("Tom","Class")
 
 
 '''
+
+#random test 0 zero in python 0 in python is false
+def test():
+    a = [0,1, 4, 9, 16, 0]
+    for x in a:
+        if x==True:
+            print("Value of x ",x)
+        else:
+            print("Value of X*x: ",x*x)
+
+            
+test()
+Value of X*x:  0
+Value of x  1
+Value of X*x:  16
+Value of X*x:  81
+Value of X*x:  256
+Value of X*x:  0
+
+#list Comperhensive method
+# test = [x*x for x in a if x]
+test
+[1, 16, 81, 256]
+
+
 #to handle different numbers of function parameter scenrio python use *args and **kwargs
 #that basically passed to wrapper function and same is used in calling function 
 
@@ -120,6 +395,21 @@ print(c)
 
 c1 = fun_tbl(sqr, [1,2,3,4])
 print(c1)
+
+def a(fun):
+    print("Hello Main function")
+    n="this is it"
+    def b(a,b):
+        c = a+b
+        n1=n+" Thanks"
+        return fun(c,n1)
+    return b
+
+@a
+def mydec(a,b):
+    print("hello name is  ",a,b)
+
+mydec(1,2)
 
 
 
@@ -273,3 +563,46 @@ out_func("Morning")
 
 
 '''
+
+# dictionary in list
+d = [
+ {
+  "name":"Pen",
+  "unit_price":5
+ },
+ {
+  "name":"Eraser",
+  "unit_price":3
+ },
+ {
+  "name":"Pencil",
+  "unit_price":10
+ },
+ {
+  "name":"White paper",
+  "unit_price":15
+ }
+]
+
+for i in d:
+    print(f"Accessing dict from list --> {i}")
+    for x in i:
+        print(f"Accessing dictionary key and values Key--> {x}, and Value --> {i[x]}")
+
+        
+Accessing dict from list --> {'name': 'Pen', 'unit_price': 5}
+Accessing dictionary key and values Key--> name, and Value --> Pen
+Accessing dictionary key and values Key--> unit_price, and Value --> 5
+Accessing dict from list --> {'name': 'Eraser', 'unit_price': 3}
+Accessing dictionary key and values Key--> name, and Value --> Eraser
+Accessing dictionary key and values Key--> unit_price, and Value --> 3
+Accessing dict from list --> {'name': 'Pencil', 'unit_price': 10}
+Accessing dictionary key and values Key--> name, and Value --> Pencil
+Accessing dictionary key and values Key--> unit_price, and Value --> 10
+Accessing dict from list --> {'name': 'White paper', 'unit_price': 15}
+Accessing dictionary key and values Key--> name, and Value --> White paper
+Accessing dictionary key and values Key--> unit_price, and Value --> 15
+
+
+
+#__name__ assign value __main__ to 
