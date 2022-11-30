@@ -10,6 +10,7 @@ try:
 except:
     print('Except Block')
 else:
-    print('Try Else Block - x is equal or higher then 5')
+    print('Try Else Block - This Block will execute with Try, will not execute in case of exception')
 finally:
     print('Try and except block is complete, and this will exeute no matter whether block raised error or')
+    print('Most important -> This can be useful to close objects and clean up resources')
