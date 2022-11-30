@@ -1,7 +1,8 @@
-# a = input('Enter the object value ==> ')
-a=True
+
+# a=True
 while True:
     try:
+        a = float(input('Enter the object value ==> '))
         type(a) == int
         if type(a)==int:
             print('Input type is Integer')
@@ -12,7 +13,7 @@ while True:
         elif type(a)==list:
             print('Input type is its list')
         else:
-            print('something new, lets research')
+            print('Type is not defined, lets research')
         break
     except:
         print('something else Try again')
