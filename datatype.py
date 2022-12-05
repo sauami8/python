@@ -18,3 +18,20 @@ while True:
     except:
         print('something else Try again')
         
+
+for i in range(1,10):
+    if i==3:
+        continue
+    else:
+        print('numner is ',i)
+
+
+while True:
+    try:
+        a = input("Enter number: ")
+        a = int(a)
+        print("number squar is", a**a)
+        
+    except:
+        print('not a number')
+        break
