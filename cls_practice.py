@@ -49,4 +49,8 @@ print(emp_cls.city, emp_ins.city)
 
 
 
+print(emp_cls.__dict__)
+print(emp_ins.__dict__)
+
+
 

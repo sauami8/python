@@ -11,3 +11,10 @@ while True:
             continue
         else:
             break
+
+
+from pkg.p2 import p2hello.p2list
+
+
+
+print(p2list)
