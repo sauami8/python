@@ -1,4 +1,4 @@
-"""
+
 
 def a_decorator(fun):
     print("Hello Main function")
@@ -11,11 +11,11 @@ def a_decorator(fun):
 
 @a_decorator
 def mydec(a,b):
-    print("hello name is  ",a,b)
+    print("Decorator in func hello name is  ",a,b)
 
 mydec(1,2)
 
-"""
+
 class decorator_class(object):
     print("Class decorator print as soon as @called with function")
     def __init__(self, push_function):

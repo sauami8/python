@@ -9,3 +9,14 @@ def main_func(msg):
 main_func('Hello')
 
 main_func(234)
+
+def h(m):
+    mymsg = m
+    print('message is: ', mymsg)
+
+
+h1 = h('morning')
+h2 = h('evening')
+
+h1
+h2

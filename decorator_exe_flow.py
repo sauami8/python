@@ -26,7 +26,7 @@ def sd(func):
 def my_func(a,b):
     print(f"My Func a {a} and B {b} {__name__}")
 
-my_func(2,2)
+my_func(15,15)
 
 """
 one = md(my_func)
