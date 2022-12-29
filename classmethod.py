@@ -49,7 +49,7 @@ f,l,p = emp_str.split('-')
 # print(f,l,p)
 # this create instance of employee class with values retrieve from emp_str variable 
 alt_emp_inst = employee.from_string(emp_str)
-
+print('alternate emp instance -->')
 alt_emp_inst.full_name()
 print(alt_emp_inst.pay_raise)
 
