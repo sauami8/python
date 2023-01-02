@@ -60,7 +60,9 @@ emp1 = employee('John', 'Dow', 5000)
 emp1.pay_raise = 1.1
 
 emp2 = employee('John', 'Dow', 5000)
+
 twopay = emp1+emp2
+
 print("two employee together pay --> ", twopay)
 
 print('Emp 1 pay rise', emp1.new_pay())
@@ -70,4 +72,6 @@ print('Emp 2 pay rise', emp2.new_pay())
 print(emp1.new_pay())
 # print('this is instance' , emp1.__dict__)
 print('this is Class' , employee.__dict__)
+
+print(emp1.fname+emp2.fname)
 

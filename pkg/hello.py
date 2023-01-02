@@ -13,7 +13,7 @@ while True:
             break
 
 
-from pkg.p2 import p2hello.p2list
+
 
 
 

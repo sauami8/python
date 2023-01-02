@@ -1,13 +1,20 @@
+import logging
+
+logging.basicConfig(filename='pkg/class_example.log', level=logging.INFO, 
+format='%(asctime)s:%(levelname)s:%(funcName)s:%(message)s')
+
 class country:
     def __init__(self, city, lang):
         self.city = city
         self.lang = lang
     
     def getcity(self):
-        print(f"{self.city} is city")
+        # print(f"{self.city} is city")
+        logging.info('{} is city'.format(self.city))
     
     def getlang(self):
-        print(f"{self.lang} is primary language")
+        # print(f"{self.lang} is primary language")
+        logging.info('{} is primary language'.format(self.lang))
 
 queen = country('London', 'English')
 takila = country('Maxico', 'Spanish')

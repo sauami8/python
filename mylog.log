@@ -1,0 +1,4 @@
+DEBUG:root:Add: 10+5 = 15
+DEBUG:root:Subtract 10-5 = 5
+DEBUG:root:Multiplication of 10x5 = 50
+DEBUG:root:Division 10/5 = 2.0
