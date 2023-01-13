@@ -4,7 +4,9 @@ def funca(x):
         v=x
     else:
         v = x+1
+    print(f'main function funca value pass{x} and function outcome {v}')
     def infunc(v):
+        print(f'Value of inFunc is {v} ')
         if v==2:
             x1=100
         else:
@@ -16,14 +18,15 @@ def funca(x):
 def ff():
     print("FF func")
 
-r = funca(1)
+r = funca(2)
+print(f'-------\n')
 print(r(2))
-
+print(f'-------\n')
 
 if r(1) == 100:
     print("no prob")
-else:
-    exit()
+# else:
+    # exit() # this will stop the execution going forward so no futher code execution
 
 
 

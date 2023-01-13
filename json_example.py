@@ -3,6 +3,7 @@ from sre_parse import State
 
 
 
+
 jdata = '''
 {
   "states": [
@@ -215,7 +216,7 @@ data = json.loads(jdata)
 #print(data['states'])
 
 for s in data:
-  print(s, data[s])
+  print(s, '\n' ,data[s])
   for va in data[s]:
     print(va)
 

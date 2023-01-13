@@ -16,18 +16,18 @@ class emp:
 class n(emp):
     def __init__(self, fname, lname, pay, v):
         super().__init__(fname,lname,pay)
-        if self.v is None:
-            self.v = []
-        else:
-            self.v = v
-
+        self.v = v
 
     def print_name(self):
-        for x in self.v:
-            print("emp name ", )
+        print(f"emp name {self.fname}, {self.lname} and value is {self.v}", )
 
 e = emp("Jack", "Ryan", 100)
 
+e1 = n('Jack','Son',500, 5)
+
+e1.print_name()
+e1.pname()
+e.pname()
 x = [e.fname, e.lname]
 
 print(x)

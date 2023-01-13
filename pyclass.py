@@ -1,11 +1,13 @@
 #https://github.com/sauami8/python.git
 
 class emp:
+    cnt=0
     def __init__(self, fname, lname,pay):
         self.fname = fname
         self.lname = lname
         self.pay = pay
         self.email = fname + '.'+lname + '@company.com'
+        emp.cnt+=1
 
 
     def get_name(self):
@@ -20,8 +22,9 @@ class emp:
 
 
 e = emp("Jhon", "dow", 100)
+e2 = emp('Rosy', 'Red',120)
 
-
+print(emp.cnt)
 
 print(e.get_name())
 
@@ -194,7 +197,10 @@ class emp:
         self.email = fname+lname+'@instance.com'
         emp.cnt+=1
 
-    #this method works same as creating new instance for class but require some sort of additional task to get class arguments
+    #this method works same as creating new instance for class but require some sort of-
+    #  additional task to get class arguments - 
+    # basically class method allows us to create the class instance
+
     @classmethod
     def add_new_emp(cls, mystr):
         fname, lname, pay = mystr.split("-")

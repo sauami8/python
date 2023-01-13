@@ -29,4 +29,4 @@ else:
 print(a)
 print(b)
 print(c)
-print("Output" ,o(a,b))
+print("Output" , o(a,b))

@@ -1,3 +1,35 @@
+from functools import wraps
+ 
+ 
+ 
+def md(func):
+   #@wraps(func)
+   def mw(a,b):
+       a = a+2
+       b +=2
+       print("Exeecuting MW {}".format(func.__name__))
+       return func(a,b)
+   return mw
+ 
+ 
+def sd(func):
+   #@wraps(func)
+   def sw(a,b):
+       a /=3
+       b/=3
+       print("executing SW {}".format(func.__name__))
+       return func(a,b)
+   return sw
+ 
+@sd
+@md
+def my_func(a,b):
+   print(f"My Func a {a} and B {b} {__name__}")
+ 
+my_func(2,2)
+
+
+
 def my_decorator_func(anyfunc):
    print("-- this is decorator function applying on calling function - {0}".format(__name__))
    def wrapper_func(*args, **kwargs):
