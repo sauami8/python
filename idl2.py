@@ -8,7 +8,6 @@ for l in l1:
 
 #Assert is like if condition
 
-
 try:
     x = "OK"
     assert x == "O", "Value is not OK"
