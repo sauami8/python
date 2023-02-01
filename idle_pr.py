@@ -25,3 +25,10 @@ for g in y:
     print('generator values:', next(y))
 print("value From generator matching Series is --> ", sum(y))
 print("Object Y is: ", y, " and Object Y1 is ", type(y1))
+
+# pip install googletrans==3.1.0.0a0
+from googletrans import Translator
+t = '''Hello world'''
+trans = Translator()
+out = trans.translate(t, dest="hi")
+print(out.text)
