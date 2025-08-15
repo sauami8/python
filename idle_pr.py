@@ -28,7 +28,7 @@ print("Object Y is: ", y, " and Object Y1 is ", type(y1))
 
 # pip install googletrans==3.1.0.0a0
 from googletrans import Translator
-t = '''Hello world'''
+t = "Hello Saurabh how are you today" #'''Hello world'''
 trans = Translator()
 out = trans.translate(t, dest="hi")
 print(out.text)

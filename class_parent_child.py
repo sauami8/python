@@ -9,7 +9,7 @@ class emp:
         self.lname = lname
         self.pay = pay
         self.email = fname + '.'+lname + '@company.com'
-
+s
     def pname(self):
         print(f"Emp name {self.fname}, {self.lname} ")
 
