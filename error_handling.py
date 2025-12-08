@@ -1,4 +1,15 @@
 import os
+try:
+    f = open('non_existent_file.txt', 'r')
+    content = f.read()
+    print(content)
+except FileNotFoundError as e:
+    print(f'Error: {e}')
+except Exception as e:
+    print(f'this is fina exception if above one is missed, An unexpected error occurred: {e}')
+finally:
+    print('This part will always execute, whether an error occurred or not.')
+
 
 try:
     x==2
